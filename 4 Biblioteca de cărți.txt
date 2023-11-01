@@ -1,0 +1,37 @@
+let Biblioteca = {
+    carti: [],
+    adaugaCarte: function(titlu, autor, citita) {
+        this.carti.push({ titlu, autor, citita });
+    },
+    stergeCarte: function(titlu) {
+        this.carti = this.carti.filter(carte => carte.titlu !== titlu);
+    },
+    afiseazaCitite: function() {
+        const cartiCitite = this.carti.filter(carte => carte.citita);
+        if (cartiCitite.length === 0) {
+            console.log("Nu există cărți citite în bibliotecă.");
+        } else {
+            console.log("Cărțile citite în bibliotecă sunt:");
+            cartiCitite.forEach(carte => {
+                console.log(`Titlu: ${carte.titlu}, Autor: ${carte.autor}`);
+            });
+        }
+    }
+};
+Biblioteca.adaugaCarte("Carte 1", "Autor 1", true);
+Biblioteca.adaugaCarte("Carte 2", "Autor 2", false);
+Biblioteca.adaugaCarte("Carte 3", "Autor 3", true);
+
+Biblioteca.afiseazaCitite(); 
+
+let carteNecitita = Biblioteca.carti.find(carte => !carte.citita);
+
+console.log("Cărți rămase în bibliotecă:");
+Biblioteca.carti.forEach(carte => {
+    console.log(`Titlu: ${carte.titlu}, Autor: ${carte.autor}`);
+});
+
+if (carteNecitita) {
+    console.log("Cartea necitită din bibliotecă:");
+    console.log(`Titlu: ${carteNecitita.titlu}, Autor: ${carteNecitita.autor}`);
+}

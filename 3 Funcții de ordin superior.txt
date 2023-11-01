@@ -1,0 +1,9 @@
+function aplicareFunctiePeArray(array, functieCallback) {
+    return array.map(functieCallback);
+}
+function dublare(numar) {
+    return numar * 2;
+}
+let numere = [1, 2, 3, 4, 5];
+let rezultat = aplicareFunctiePeArray(numere, dublare);
+console.log(rezultat);

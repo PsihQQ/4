@@ -1,0 +1,9 @@
+let persoana = {
+    nume: "Ion Cercel",
+    varsta: 22,
+    ocupatie: "Programator"
+};
+let { nume, varsta } = persoana;
+
+console.log(`Nume: ${nume}`);
+console.log(`Vârsta: ${varsta}`);

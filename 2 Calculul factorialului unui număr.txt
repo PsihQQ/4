@@ -1,0 +1,10 @@
+function factorial(numar) {
+    if (numar === 0 || numar === 1) {
+        return 1;
+    } else {
+        return numar * factorial(numar - 1);
+    }
+}
+console.log("Factorialul lui 0 este: " + factorial(0));
+console.log("Factorialul lui 5 este: " + factorial(5));
+console.log("Factorialul lui 10 este: " + factorial(10));
